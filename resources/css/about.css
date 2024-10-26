@@ -1,0 +1,10 @@
+#about-page-image {
+    filter: drop-shadow(10px 10px 10px black);
+    transition: transform 0.3s;
+    max-width: 100%;
+    height: auto;
+
+    #about-page-image:hover {
+        transform: scale(1.05);
+    }
+}
