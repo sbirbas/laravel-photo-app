@@ -13,7 +13,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/gallery', function(){
-    return view('photos');
+    return view('gallery');
 })->name('gallery');
 
 Route::get('/dashboard', function () {

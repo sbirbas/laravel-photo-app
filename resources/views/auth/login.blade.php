@@ -1,4 +1,6 @@
+@extends('layouts.app')
 @section('content')
+    <div id="login-card" class="card">
 <form method="POST" action="{{ route('login') }}">
     @csrf
     <div>
@@ -9,7 +11,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
     </div>
-    <button type="submit">Login</button>
+    <button class="btn" type="submit">Login</button>
 </form>
-
+    </div>
 @endsection

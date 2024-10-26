@@ -1,12 +1,16 @@
 html,body{
-    background-color: #616e7e;
+    background-color: rgba(83, 101, 83, .8);
     font-family: "Josefin Sans", serif !important;
     color:white;
+    margin: 0 auto;
+    min-height: 100vh;
 
 }
+
 a {
     text-decoration: none;
 }
+
 a:link, a:visited {
     color: #f3f3ff;
     transition: color 0.3s ease-out;
@@ -18,19 +22,97 @@ a:hover {
     transition: color 0.3s ease-in;
 
 }
-/*h1,h2,h3{*/
-/*    font-family: 'Abril-fatface', serif !important;*/
-/*    font-weight: 700 !important;*/
-/*    text-shadow: 2px 5px #424d5d,4px 6px #6b819d,6px 7px #a4aebd;*/
-/*}*/
-#about-page-image {
-    transition: filter 0.3s ease-in;
+#hero {
+    background-image: url('/storage/app/public/hero.jpg');
+    background-size: cover;
+}
+#login-card {
+    align-content: center;
 }
 
-#about-page-image:hover {
-    filter: drop-shadow(20px 20px #6b819d);
-    transition: filter 0.3s ease-out;
+.card{
+    background-color: rgba(171, 196, 171, 0.67);
+    filter: drop-shadow(2px );
 }
+
+
+                                                   button{
+                                                       font-size: 16px;
+                                                       font-family: "Yeseva One";
+                                                       color:white;
+                                                       letter-spacing: 1px;
+                                                       padding: 13px 20px 13px;
+                                                       outline: 0;
+                                                       border: 1px solid #f3f3ff;
+                                                       cursor: pointer;
+                                                       position: relative;
+                                                       background-color: rgba(0, 0, 0, 0);
+                                                       user-select: none;
+                                                       -webkit-user-select: none;
+                                                       touch-action: manipulation;
+                                                   }
+
+button:after {
+    content: "";
+    background-color: black;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+button:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 13px 50px 13px;
+    }
+}
+#photo-description{
+    background-color: rgba(171, 196, 171, 0.01);
+    color:white;
+    border: 1px solid #f3f3ff;
+
+
+}
+input[type="file"] {
+    font-size: 16px;
+    font-family: "Yeseva One";
+    color:white;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid #f3f3ff;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;}
+
+h1,h2,h3{
+    color: white;
+    font-family: "Yeseva One", serif;
+    font-weight: 700 !important;
+    text-shadow: 2px 3px rgba(26, 31, 26, 0.61);
+}
+
+#about-page-image {
+    filter: drop-shadow(20px 20px rgba(26, 31, 26, 0.61));
+    transition: filter 0.3s ease-in;
+
+}
+#about-container p{
+    font-size: 1.1em;
+}
+
+
 #footer{
     color:grey;
 }

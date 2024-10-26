@@ -1,17 +1,16 @@
 @extends('layouts.app')
-
 @section('content')
 
     <div class="row" style="justify-content: center !important">
-    <div id="create-card"  class="mt-5 h-100 w-50 align-content-center card p-5">
-    <h1>Upload New Photo</h1>
+    <div id="create-card"  class="mt-5 h-100 w-75 align-content-center card p-5">
+    <h1 class="text-center">Upload New Photo <i class="fa-solid fa-camera-retro"></i></h1>
 
     <form action="{{ route('photos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <input class="col-12 m-1 " type="file" name="image" required>
-        <textarea class="col-12 m-1" name="description" placeholder="Description" required></textarea>
-        <button class="col-12 m-1 btn btn-outline-primary" type="submit">Upload Image</button>
+        <input class="col-12 m-1 post-photo " type="file" name="image" multiple required>
+        <textarea id="photo-description" class="col-12 m-1" name="description" placeholder="Description" required></textarea>
+        <button class="col-12 m-1" type="submit">Upload Image</button>
     </form>
     </div>
     </div>
