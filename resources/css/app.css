@@ -1,5 +1,32 @@
 html,body{
+    background-color: #616e7e;
     font-family: "Josefin Sans", serif !important;
+    color:white;
+
+}
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #f3f3ff;
 }
 
+a:hover {
+    color: #6b819d;
+}
+h1,h2,h3{
+    font-family: 'Abril-fatface', serif !important;
+    font-weight: 700 !important;
+    text-shadow: 7px 10px #28323b, 7px 5px #a4aebd;
+}
+#about-page-image {
+    filter: drop-shadow(10px 10px 10px black);
+    transition: transform 0.3s;
+    max-width: 100%;
+    height: auto;
+
+    #about-page-image:hover {
+        transform: scale(1.05);
+    }
+}
 

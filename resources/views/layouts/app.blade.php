@@ -19,14 +19,12 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @include('components.navbar')
 
-            <!-- Page Content -->
             <main>
-@yield('content')
+                @yield('content')
             </main>
             @include('components.footer')
         </div>

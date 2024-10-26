@@ -1,5 +1,4 @@
 @section('content')
-    <div class="card">
 <form method="POST" action="{{ route('login') }}">
     @csrf
     <div>
@@ -12,5 +11,5 @@
     </div>
     <button type="submit">Login</button>
 </form>
-</div>
+
 @endsection

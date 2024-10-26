@@ -17,6 +17,7 @@
             <div>
                 <div>
                     <button>
+
                         <div>{{ Auth::user()->name }}</div>
                     </button>
 
