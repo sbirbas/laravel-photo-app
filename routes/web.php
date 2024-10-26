@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';

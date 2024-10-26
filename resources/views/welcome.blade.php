@@ -13,7 +13,9 @@
 
     <p>Proin euismod, tortor vitae sollicitudin elementum, sapien justo malesuada ante, sed aliquet velit libero sit amet eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec suscipit, libero nec aliquam pharetra, ligula dui venenatis magna, in efficitur nulla nunc a velit.</p>
 
-    <button onclick="{{route('photos.gallery')}}">View my Work</button>
 </div>
     <div id ="showcase" class="">Showcase</div>
+@for ($i = 0 ; $i <= 5 ; $i++)
+    <h1>Hello</h1>
+@endfor
 @endsection
