@@ -13,7 +13,7 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::all();
-        return view('posts', compact('photos'));
+        return view('photos', compact('photos'));
     }
 
     public function store(Request $request): RedirectResponse
