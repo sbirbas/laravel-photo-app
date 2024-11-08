@@ -1,17 +1,26 @@
 @extends('layouts.app')
+
 @section('content')
-    <div id="login-card" class="card">
-<form method="POST" action="{{ route('login') }}">
-    @csrf
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button class="btn" type="submit">Login</button>
-</form>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <form method="POST" action="{{ route('login') }}" class="card p-5 shadow-sm" style="width: 400px;">
+            @csrf
+            <h2 class="text-center mb-4">Login</h2>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <button class="mt-2 w-100" type="submit">Login</button>
+
+            <div class="text-center mt-3">
+                <a href="{{ route('password.request') }}" class="small">Forgot your password?</a>
+            </div>
+        </form>
     </div>
 @endsection

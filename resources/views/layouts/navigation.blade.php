@@ -1,9 +1,8 @@
-
-    <div class="card card-mx-3">
+@extends('layouts.app')
+@section('content')
     <div>
         <div>
             <a href="{{ route('dashboard') }}">
-                {{ __('Dashboard') }}
             </a>
         </div>
 
@@ -27,8 +26,6 @@
                 </form>
             </div>
         </div>
-        @include('photos.create')
-
     </div>
-
+@endsection
 
