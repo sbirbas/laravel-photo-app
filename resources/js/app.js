@@ -1,14 +1,12 @@
 import 'bootstrap';
-
-var hero = document.getElementById('hero-header');
-
-var typewriter = new Typewriter(hero, {
-    loop: true
+$(document).ready(function() {
+    $('#gallery-cards').slick({
+        infinite: true,
+        speed: 500,
+        fade: true,
+        centerPadding: '40px',
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
 });
-
-typewriter.typeString('Sophia B. Photography')
-    .deleteAll()
-    .typeString('Check out my work!')
-    .pauseFor(2500)
-    .start();
-

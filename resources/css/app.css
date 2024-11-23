@@ -1,120 +1,174 @@
-
+/* Global Styles */
 html, body {
-    background-color: rgba(66, 77, 93, 0.27);
-    font-family: "Josefin Sans", serif !important;
-    color: #28323b !important;
+    background-color: rgba(199, 199, 199, 0.8);
+    font-family: "Fahkwang", sans-serif;
+    color: #ffffff;
     margin: 0 auto;
-    min-height: 100vh;
-}
-#gallery-cards {
-    max-width: 400px;
-    height: auto;
-    align-content: center;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
+/* Text Elements */
+h1, h2, h3 {
+    color: #f3f3ff;
+    font-weight: 700;
+}
+
+/* Links */
 a {
     text-decoration: none;
-    color: #28323b !important;
+    color: #ffffff !important;
     transition: color 0.3s ease-out;
 }
 
 a:hover {
-    color: #8898af;
-    transition: color 0.3s ease-in;
+    color: #525457;
 }
 
-/*#hero {*/
-/*    background-image: url('/storage/app/public/hero.jpg');*/
-/*    background-size: cover;*/
-/*}*/
+/* Button Styles */
+button {
+    background-color: #718096;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-#login-card {
+button:hover {
+    background-color: rgba(66, 77, 93, 0.39);
+    box-shadow: 1px 1px 5px rgba(141, 138, 138, 0.5);
+    color: #f3f3ff;
+    transform: scale(1.05);
+}
+
+/* Dropdown */
+.nav-item.dropdown, .dropdown-item {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    color: #f3f3ff; /* Change on hover for consistency */
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('/storage/app/public/IMG_6902.JPG');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(77, 82, 86, 0.7);
+    background-blend-mode: multiply;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#hero-header {
+    padding-top: 15%;
+}
+
+/* Cards */
+.card {
+    color: black;
+}
+
+#gallery-cards {
+    max-height: 400px;
+    width: auto;
     align-content: center;
 }
 
-.card {
-    background-color: rgb(47, 67, 94);
-    filter: drop-shadow(2px);
+/* Login Card */
+#login-card {
+    align-content: center;
+    color: black;
 }
 
-button {
-    font-size: 16px;
-    font-family: "Yeseva One";
-    color: white;
-    letter-spacing: 1px;
-    padding: 13px 20px;
-    outline: 0;
-    border: 1px solid #f3f3ff;
-    cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    user-select: none;
-    touch-action: manipulation;
-    transition: background-color 0.2s;
-}
-
-button:after {
-    content: "";
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    position: absolute;
-    z-index: -1;
-    transition: 0.2s;
-}
-
-button:hover:after {
-    top: 0;
-    left: 0;
-}
-
-@media (min-width: 768px) {
-    button {
-        padding: 13px 50px;
-    }
-}
-
+/* Photo Description */
 #photo-description {
     background-color: rgba(171, 196, 171, 0.01);
     color: white;
     border: 1px solid #f3f3ff;
 }
 
+/* File Input */
 input[type="file"] {
     font-size: 16px;
-    font-family: "Yeseva One";
-    color: white;
     letter-spacing: 1px;
     padding: 13px 20px;
-    outline: 0;
+    outline: none;
     border: 1px solid #f3f3ff;
-    cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
     user-select: none;
     touch-action: manipulation;
 }
 
-h1, h2, h3 {
-
-    color: #f3f3ff;
-    font-family: "Yeseva One", serif;
-    font-weight: 700 !important;
-    text-shadow: 2px 3px rgb(40, 50, 59);
-}
-
-#about-page-image {
-    filter: drop-shadow(20px 20px rgba(26, 31, 26, 0.61));
-    transition: filter 0.3s ease-in;
-}
-
+/* About Page */
 #about-container p {
     font-size: 1.1em;
 }
 
+#about-page-image {
+    border: 1px solid white;
+}
+
+/* Footer */
 #footer {
     color: grey;
-
     background-color: rgba(255, 252, 252, 0.67);
+}
+
+/* Image Hover Effect (Commented out as per your original code) */
+#about-page-image:hover {
+    /* Optional filter effect or transition can be added */
+    /* filter: drop-shadow(20px 20px rgba(26, 31, 26, 0.61)); */
+    /* transition: filter 0.3s ease-in; */
+}
+/*!* Main container for gallery *!*/
+/*#gallery-cards {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); !* Auto grid with dynamic column width *!*/
+/*    grid-gap: 20px; !* Spacing between grid items *!*/
+/*    padding: 20px;*/
+/*}*/
+
+/*!* Gallery item *!*/
+/*.gallery-item {*/
+/*    position: relative;*/
+/*}*/
+
+/*!* Image styling *!*/
+/*.gallery-card img {*/
+/*    object-fit: cover;  !* Ensures the image is cropped and covers the container *!*/
+/*    border-radius: 8px;*/
+/*    border: 1px white !important;*/
+
+/*}*/
+
+/*!* Optional: Add hover effect *!*/
+/*.gallery-item:hover .gallery-card img {*/
+/*    transform: scale(1.05); !* Slight zoom on hover *!*/
+/*    transition: transform 0.3s ease-in-out;*/
+/*}*/
+
+/*!* Styling for the delete button *!*/
+/*#delete-button {*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    right: 10px;*/
+/*    z-index: 1;*/
+/*}*/
+
+.slick-prev{
+
+}
+.slick-next{
+
 }

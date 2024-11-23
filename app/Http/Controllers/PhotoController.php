@@ -10,9 +10,15 @@ use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $photos = Photo::all();
+        $filter = $request->input('description');
+
+        if ($filter){
+            $photos = Photo::where('description', $filter)->get();
+        } else {
+            $photos = Photo::all();
+        }
         return view('photos.index', compact('photos'));
     }
 

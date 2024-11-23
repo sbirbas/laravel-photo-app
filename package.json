@@ -18,9 +18,13 @@
     },
     "dependencies": {
         "@glidejs/glide": "^3.6.2",
+        "aos": "^2.3.4",
         "bootstrap": "^5.3.3",
         "gsap": "^3.12.5",
+        "magic-grid": "^3.4.7",
+        "masonry-layout": "^4.2.2",
         "swiper": "^11.1.14",
-        "typewriter-effect": "^2.21.0"
+        "typewriter-effect": "^2.21.0",
+        "waterfall.js": "^1.0.2"
     }
 }
