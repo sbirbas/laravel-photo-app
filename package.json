@@ -21,6 +21,7 @@
         "aos": "^2.3.4",
         "bootstrap": "^5.3.3",
         "gsap": "^3.12.5",
+        "imagesloaded": "^5.0.0",
         "magic-grid": "^3.4.7",
         "masonry-layout": "^4.2.2",
         "swiper": "^11.1.14",

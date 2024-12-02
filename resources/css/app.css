@@ -3,7 +3,6 @@ html, body {
     background-color: rgba(255, 255, 255, 0.78);
     font-family: "Fahkwang", sans-serif;
     color: rgba(37, 37, 37, 0.57);
-    margin: 0 auto;
     height: 100%;
     max-width: 100%;
     overflow-x: auto;
@@ -161,67 +160,49 @@ input[type="file"] {
     /* filter: drop-shadow(20px 20px rgba(26, 31, 26, 0.61)); */
     /* transition: filter 0.3s ease-in; */
 }
-#gallery-card{
-}
-#gallery-card:hover{
-    opacity: 1;
-    transform: scale(1);
+.grid {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.slick-prev{
-
-}
-.slick-next{
-
-}
-#gallery-card.slick-current slick-active slick-center {
-    transform: scale(1);
-    opacity: 1;
-    width: 300px;
-    align-items: center;
-    height: auto;
-    transition: all 0.7s ease-in-out;
+.grid-item {
+    width: 400px;  /* Adjust based on your column width */
+    margin: 16px;
 }
 
-.slick-slide {
-    opacity: 0.2;
-    transform: scale(0.85);
-    transition: all 0.7s ease-in-out;
-    height: auto;
-    width: 300px;
-}
 
-.image-container{
-    position: relative;
-    display:inline-block;
-}
+/*.image-container {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    width: 100%; !* Adjust as necessary *!*/
+/*}*/
 
-#gallery-card {
-    width: 100%;
-    height: auto;
-    transition: opacity 0.2s ease;
-}
+/*#gallery-card {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    transition: opacity 0.2s ease;*/
+/*}*/
 
-#gallery-card:hover {
-    opacity: 0.8;
-}
+/*#gallery-card:hover {*/
+/*    opacity: 0.8;*/
+/*}*/
 
-.photo-label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    opacity:0;
-    font-weight: bold;
-    z-index: 10;
-}
+/*.photo-label {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    color: white;*/
+/*    font-size: 24px;*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*    font-weight: bold;*/
+/*    z-index: 10;*/
+/*}*/
 
-.photo-label:hover{
-    opacity:1;
-    color:black;
-    transition: opacity 0.4s ease;
-}
+/*.photo-label:hover {*/
+/*    opacity: 1;*/
+/*    color: black;*/
+/*    transition: opacity 0.4s ease;*/
+/*}*/
 

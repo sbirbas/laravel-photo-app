@@ -1,17 +1,19 @@
 @extends('layouts.navigation')
 @section('content')
     <h2 class="mt-5 text-center" xmlns="http://www.w3.org/1999/html">Welcome, {{ Auth::user()->name }}</h2>
-                <p class="text-center">Email: {{ Auth::user()->email }}</p>
+    <img class="col-1 float-end" src="{{ asset('storage/807b5c4b02e765bb4930b7c66662ef4b.gif') }}">
 
-                <div class="d-flex justify-content-center p-2">
+    <p class="text-center">Email: {{ Auth::user()->email }}</p>
+
+    <div class="d-flex justify-content-center p-2">
                     <button href="{{ route('profile.edit') }}">Edit Profile</button>
                     <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                         @csrf
                         <button type="submit">Log Out</button>
                     </form>
+
                 </div>
 
-                <hr class="my-4">
 
                 <div class="row" style="justify-content: center !important">
                     <div id="create-card"  class="mt-5 h-100 w-75 align-content-center card p-5">
