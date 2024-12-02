@@ -1,8 +1,8 @@
 /* Global Styles */
 html, body {
-    background-color: rgba(199, 199, 199, 0.8);
+    background-color: rgba(255, 255, 255, 0.78);
     font-family: "Fahkwang", sans-serif;
-    color: #ffffff;
+    color: rgba(37, 37, 37, 0.57);
     margin: 0 auto;
     height: 100%;
     max-width: 100%;
@@ -12,26 +12,63 @@ html, body {
 
 /* Text Elements */
 h1, h2, h3 {
-    color: #f3f3ff;
     font-weight: 700;
 }
 
-/* Links */
-a {
-    text-decoration: none;
-    color: #ffffff !important;
-    transition: color 0.3s ease-out;
+.sidebar{
+    margin: 0;
+    padding:0;
+    width:200px;
+    background-color: white;
+    position:fixed;
+    height:100%;
+    overflow:auto;
 }
 
-a:hover {
-    color: #525457;
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #efe2e2;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    color: rgba(47, 56, 47, 0.5);
+    transition: color 0.2s ease;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
 }
 
 /* Button Styles */
 button {
     background-color: #718096;
     border-radius: 10px;
-    color: white;
     border: 1px solid black;
     padding: 10px;
     cursor: pointer;
@@ -41,7 +78,6 @@ button {
 button:hover {
     background-color: rgba(66, 77, 93, 0.39);
     box-shadow: 1px 1px 5px rgba(141, 138, 138, 0.5);
-    color: #f3f3ff;
     transform: scale(1.05);
 }
 
@@ -51,16 +87,14 @@ button:hover {
 }
 
 .dropdown-item {
-    color: white;
 }
 
 .dropdown-item:hover {
-    color: #f3f3ff; /* Change on hover for consistency */
 }
 
 /* Hero Section */
 #hero {
-    background-image: url('/storage/app/public/IMG_6902.JPG');
+    background-image: url('/storage/app/public/halfmoon.JPG');
     background-size: cover;
     background-position: center;
     background-color: rgba(77, 82, 86, 0.7);
@@ -75,7 +109,6 @@ button:hover {
 
 /* Cards */
 .card {
-    color: black;
 }
 
 #gallery-cards {
@@ -87,13 +120,11 @@ button:hover {
 /* Login Card */
 #login-card {
     align-content: center;
-    color: black;
 }
 
 /* Photo Description */
 #photo-description {
     background-color: rgba(171, 196, 171, 0.01);
-    color: white;
     border: 1px solid #f3f3ff;
 }
 
@@ -121,7 +152,6 @@ input[type="file"] {
 
 /* Footer */
 #footer {
-    color: grey;
     background-color: rgba(255, 252, 252, 0.67);
 }
 
@@ -131,40 +161,12 @@ input[type="file"] {
     /* filter: drop-shadow(20px 20px rgba(26, 31, 26, 0.61)); */
     /* transition: filter 0.3s ease-in; */
 }
-/*!* Main container for gallery *!*/
-/*#gallery-cards {*/
-/*    display: grid;*/
-/*    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); !* Auto grid with dynamic column width *!*/
-/*    grid-gap: 20px; !* Spacing between grid items *!*/
-/*    padding: 20px;*/
-/*}*/
-
-/*!* Gallery item *!*/
-/*.gallery-item {*/
-/*    position: relative;*/
-/*}*/
-
-/*!* Image styling *!*/
-/*.gallery-card img {*/
-/*    object-fit: cover;  !* Ensures the image is cropped and covers the container *!*/
-/*    border-radius: 8px;*/
-/*    border: 1px white !important;*/
-
-/*}*/
-
-/*!* Optional: Add hover effect *!*/
-/*.gallery-item:hover .gallery-card img {*/
-/*    transform: scale(1.05); !* Slight zoom on hover *!*/
-/*    transition: transform 0.3s ease-in-out;*/
-/*}*/
-
-/*!* Styling for the delete button *!*/
-/*#delete-button {*/
-/*    position: absolute;*/
-/*    top: 10px;*/
-/*    right: 10px;*/
-/*    z-index: 1;*/
-/*}*/
+#gallery-card{
+}
+#gallery-card:hover{
+    opacity: 1;
+    transform: scale(1);
+}
 
 .slick-prev{
 
@@ -172,3 +174,54 @@ input[type="file"] {
 .slick-next{
 
 }
+#gallery-card.slick-current slick-active slick-center {
+    transform: scale(1);
+    opacity: 1;
+    width: 300px;
+    align-items: center;
+    height: auto;
+    transition: all 0.7s ease-in-out;
+}
+
+.slick-slide {
+    opacity: 0.2;
+    transform: scale(0.85);
+    transition: all 0.7s ease-in-out;
+    height: auto;
+    width: 300px;
+}
+
+.image-container{
+    position: relative;
+    display:inline-block;
+}
+
+#gallery-card {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s ease;
+}
+
+#gallery-card:hover {
+    opacity: 0.8;
+}
+
+.photo-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    opacity:0;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.photo-label:hover{
+    opacity:1;
+    color:black;
+    transition: opacity 0.4s ease;
+}
+

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Photo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
@@ -27,6 +26,7 @@ class PhotoController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'description' => 'required',
+            'label' => 'required',
         ]);
 
         $path = $request->file('image')->store('photos', 'public');
@@ -34,6 +34,7 @@ class PhotoController extends Controller
         Photo::create([
             'url' => $path,
             'description' => $request->description,
+            'label' => $request->label,
         ]);
         return redirect()->route('photos.index');
     }

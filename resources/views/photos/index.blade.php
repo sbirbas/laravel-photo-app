@@ -4,9 +4,12 @@
     <div class="container mt-4">
         <h1>Gallery</h1>
 
-        <div id="gallery-cards" class="mb-5">
+        <div id="gallery-cards" class="m-1">
             @foreach($photos as $photo)
-                        <img style="height:400px; width:400px;" id ='gallery-card' src="{{ asset('storage/' . $photo->url) }}" alt="Photo" />
+                <div class="image-container">
+                        <img class="col-4" id ='gallery-card' src="{{ asset('storage/' . $photo->url) }}" alt="Photo" />
+                        <p class="photo-label">{{$photo->label}}</p>
+                </div>
                         @auth
                             <form action="{{ route('photos.destroy', $photo->id) }}" method="POST" style="display: inline;">
                                 @csrf
