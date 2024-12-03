@@ -14,6 +14,7 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+
 .sidebar{
     margin: 0;
     padding:0;
@@ -41,10 +42,11 @@ h1, h2, h3 {
     transition: color 0.2s ease;
 }
 
-div.content {
+main {
     margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+    padding: 20px;
+    height: 100%;
+    overflow-y:auto;
 }
 
 @media screen and (max-width: 700px) {
@@ -55,6 +57,10 @@ div.content {
     }
     .sidebar a {float: left;}
     div.content {margin-left: 0;}
+
+    main{
+        margin-left:0;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -166,10 +172,9 @@ input[type="file"] {
 }
 
 .grid-item {
-    width: 400px;  /* Adjust based on your column width */
-    margin: 16px;
+    width: 250px;  /* Adjust based on your column width */
+    margin: 5px;
 }
-
 
 /*.image-container {*/
 /*    position: relative;*/
@@ -205,4 +210,3 @@ input[type="file"] {
 /*    color: black;*/
 /*    transition: opacity 0.4s ease;*/
 /*}*/
-

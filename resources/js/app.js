@@ -6,7 +6,6 @@ $(document).ready(function() {
     var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
         itemSelector: '.grid-item',
-        columnWidth: 450,
         horizontalOrder: true,
     });
 
@@ -16,4 +15,3 @@ $(document).ready(function() {
         msnry.layout();
     });
 });
-

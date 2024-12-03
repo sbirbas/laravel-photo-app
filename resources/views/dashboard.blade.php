@@ -5,13 +5,12 @@
 
     <p class="text-center">Email: {{ Auth::user()->email }}</p>
 
-    <div class="d-flex justify-content-center p-2">
+                <div class="d-flex justify-content-center p-2">
                     <button href="{{ route('profile.edit') }}">Edit Profile</button>
                     <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                         @csrf
                         <button type="submit">Log Out</button>
                     </form>
-
                 </div>
 
 
@@ -35,4 +34,5 @@
                     </div>
                 </div>
 
+    <h1>Manage Images</h1>
 @endsection
