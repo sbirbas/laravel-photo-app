@@ -25,7 +25,12 @@ Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.up
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-Route::resource('photos', PhotoController::class);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/photos', [PhotoController::class, 'store'])->name('photo.create');
+    Route::get('/photos', [PhotoController::class, 'edit'])->name('photo.edit');
+    Route::patch('/photos', [PhotoController::class, 'update'])->name('photo.update');
+    Route::delete('/photos', [PhotoController::class, 'destroy'])->name('photo.destroy');
 
+});
 
 require __DIR__.'/auth.php';
