@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div id="hero">
+    <img id="hero-img" class="img-fluid" src="{{ asset('media/halfmoon.JPG') }}" alt="moon"/>
 
 
 </div>

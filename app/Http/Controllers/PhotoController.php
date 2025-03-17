@@ -13,30 +13,27 @@ class PhotoController extends Controller
     {
         $filter = $request->input('description');
 
-        if ($filter){
-            $photos = Photo::where('description', $filter)->get();
-        } else {
-            $photos = Photo::all();
-        }
+        $photos = Photo::when($filter, function ($query, $filter) {
+            return $query->where('description', 'like', "%{$filter}%");
+        })->get();
+
         return view('photos.index', compact('photos'));
     }
 
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        $data = $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             'label' => 'required',
         ]);
 
-        $path = $request->file('image')->store('photos', 'public');
+        // Save to S3
+        $data['url'] = $request->file('image')->store('photos', 's3');
 
-        Photo::create([
-            'url' => $path,
-            'description' => $request->description,
-            'label' => $request->label,
-        ]);
-        return redirect()->route('photos.index');
+        Photo::create($data);
+
+        return redirect()->route('photos.index')->with('success', 'Photo uploaded successfully!');
     }
 
     public function create()
@@ -49,27 +46,36 @@ class PhotoController extends Controller
         return view('photos.edit', compact('photo'));
     }
 
-    public function update(Request $request, Photo $photo)
+    public function update(Request $request, Photo $photo): RedirectResponse
     {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        $data = $request->validate([
             'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($photo->url);
-            $path = $request->file('image')->store('photos', 'public');
-            $photo->update(['url' => $path]);
+            // Delete old file from S3
+            if ($photo->url) {
+                Storage::disk('s3')->delete($photo->url);
+            }
+
+            $data['url'] = $request->file('image')->store('photos', 's3');
         }
 
-        $photo->update(['description' => $request->description]);
-        return redirect()->route('photos.index');
+        $photo->update($data);
+
+        return redirect()->route('photos.index')->with('success', 'Photo updated successfully!');
     }
 
-    public function destroy(Photo $photo)
+    public function destroy(Photo $photo): RedirectResponse
     {
-        Storage::disk('public')->delete($photo->url);
+        if ($photo->url) {
+            Storage::disk('s3')->delete($photo->url);
+        }
+
         $photo->delete();
-        return redirect()->route('photos.index');
+
+        return redirect()->route('photos.index')->with('success', 'Photo deleted successfully!');
     }
 }
+

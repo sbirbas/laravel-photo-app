@@ -6,7 +6,7 @@
         <div class="grid">
             @foreach($photos as $photo)
                 <div class="image-container">
-                    <img class="grid-item" src="{{ asset('storage/' . $photo->url) }}" alt="Photo">
+                    <img class="grid-item" src="{{ Storage::disk('s3')->url($photo->url) }}" alt="Photo">
                 </div>
             @endforeach
 {{--                @auth--}}
