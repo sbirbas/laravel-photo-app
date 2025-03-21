@@ -1,6 +1,6 @@
 import 'bootstrap';
 import imagesLoaded from 'imagesloaded';
-
+//i feel disgusting using jquery but i guess we are here in life
 
 $(document).ready(function() {
     var grid = document.querySelector('.grid');

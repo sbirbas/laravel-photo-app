@@ -1,5 +1,5 @@
 <div class="navbar-content">
-    <div class = "sidebar">
+    <div class="sidebar">
         <a href="{{ route('home') }}">S.B Photography</a>
 
         <a href="{{ route('about') }}">About</a>
@@ -19,4 +19,13 @@
         @endif
     </div>
 
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </div>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </div>
