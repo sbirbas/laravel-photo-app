@@ -99,27 +99,12 @@ button:hover {
 
 /* Hero Section */
 #hero {
-    background-image: url('/storage/app/public/halfmoon.JPG');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(77, 82, 86, 0.7);
-    background-blend-mode: multiply;
-    height: 600px;
+    height: 100vh;
     margin: 0 auto;
 }
 
 #hero-header {
     padding-top: 15%;
-}
-
-/* Cards */
-.card {
-}
-
-#gallery-cards {
-    max-height: 400px;
-    width: auto;
-    align-content: center;
 }
 
 /* Login Card */

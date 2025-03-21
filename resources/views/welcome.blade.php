@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div id="hero">
-   Coming Soon...
+    <h1>SOPHIA BIRBAS</h1>
 </div>
 @endsection

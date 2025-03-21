@@ -13,11 +13,13 @@ class PhotoController extends Controller
     {
         $filter = $request->input('description');
 
-        $photos = Photo::when($filter, function ($query, $filter) {
-            return $query->where('description', 'like', "%{$filter}%");
-        })->get();
-
+        if ($filter){
+            $photos = Photo::where('description', $filter)->get();
+        } else {
+            $photos = Photo::all();
+        }
         return view('photos.index', compact('photos'));
+
     }
 
     public function store(Request $request): RedirectResponse
@@ -28,7 +30,6 @@ class PhotoController extends Controller
             'label' => 'required',
         ]);
 
-        // Save to S3
         $data['url'] = $request->file('image')->store('photos', 's3');
 
         Photo::create($data);
@@ -54,7 +55,6 @@ class PhotoController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            // Delete old file from S3
             if ($photo->url) {
                 Storage::disk('s3')->delete($photo->url);
             }
@@ -72,9 +72,7 @@ class PhotoController extends Controller
         if ($photo->url) {
             Storage::disk('s3')->delete($photo->url);
         }
-
         $photo->delete();
-
         return redirect()->route('photos.index')->with('success', 'Photo deleted successfully!');
     }
 }
