@@ -73,6 +73,12 @@ button:hover {
 }
 
 /* Hero Section */
+#hero-content {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
 #hero {
     position: relative;
     width: 100%;
