@@ -19,7 +19,7 @@
             <button class="mt-2 w-100" type="submit">Login</button>
 
             <div class="text-center mt-3">
-                <a href="{{ route('password.request') }}" class="small">Forgot your password?</a>
+{{--                <a href="{{ route('password.request') }}" class="small">Forgot your password?</a>--}}
             </div>
         </form>
     </div>
