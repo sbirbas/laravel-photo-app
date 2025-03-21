@@ -14,12 +14,8 @@ class DeleteAllPhotos extends Command
     {
         $this->info('Deleting all photos...');
 
-        if ($this->confirm('Are you sure you want to delete all photos?')) {
             Photo::query()->delete();
             $this->info('All photos have been deleted!');
-        } else {
-            $this->info('Operation cancelled.');
-        }
     }
 }
 
